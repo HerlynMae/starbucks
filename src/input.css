@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-4xl mb-4;
+  }
+  h2 {
+    @apply text-xl mb-4;
+  }
+
+  body {
+    @apply font-poppins leading-6 h-[2000px];
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  a {
+    @apply decoration-0;
+  }
+
+  img {
+    @apply block;
+  }
+
+  nav.show {
+    @apply h-screen;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] w-full px-4 mx-auto;
+  }
+
+  .header {
+    @apply hidden;
+  }
+
+  .header__buttons button:first-child {
+    @apply py-2 px-3 bg-light text-dark font-semibold  rounded-full  hover:bg-dark hover:bg-gray border  ease-in-out duration-[.5s];
+  }
+
+  .header__buttons button:last-child {
+    @apply py-2 px-3 bg-dark text-dark font-semibold  rounded-full  hover:bg-dark hover:bg-gray border  ease-in-out duration-[.5s];
+  }
+
+  .banner {
+    @apply bg-bannerdesktop bg-cover h-[100vh] bg-lightgreen;
+  }
+
+  .banner button {
+    @apply bg-green py-2 px-5 rounded-full text-light font-bold mb-4;
+  }
+
+  .banner a {
+    @apply underline hover:no-underline;
+  }
+
+  /* favorites */
+
+  .coffee__tab {
+    @apply text-center bg-lightgreen pt-10;
+  }
+
+  .coffee__tab h2 {
+    @apply text-[1.4rem];
+  }
+
+  .coffee__tab ul {
+    @apply flex justify-center lg:justify-center;
+  }
+
+  .coffee__tab ul li {
+    @apply py-5 px-[1.4rem] border-b-4 border-transparent flex items-center;
+  }
+
+  .coffee__tab ul li.active {
+    @apply border-green;
+  }
+
+  .coffee__content {
+    @apply bg-light  lg:bg-gray lg:py-10;
+  }
+
+  .coffee__tab__content {
+    @apply hidden px-4 mx-auto lg:items-center text-center lg:text-left max-w-[40rem];
+  }
+  .coffee__tab__content.active {
+    @apply flex flex-col lg:flex-row;
+  }
+
+  .coffee__tab__content h3 {
+    @apply text-[1.2rem];
+  }
+
+  .coffee__tab__content p {
+    @apply mt-4 text-[.9rem] lg:text-justify;
+  }
+
+  /* accordion */
+  .accordion {
+    @apply py-20;
+  }
+
+  .accordion__wrapper {
+    @apply flex flex-col lg:flex-row justify-between gap-5;
+  }
+  .accordion__item h4 {
+    @apply text-2xl mb-4 pr-[1rem] cursor-pointer;
+  }
+
+  .accordion__item ul li {
+    @apply mt-7 text-gray;
+  }
+
+  /* inline-block para ma set nya yung height and width nung i  */
+  .accordion__item i {
+    @apply inline-block lg:hidden ease-in-out duration-[.5s] relative float-right;
+  }
+
+  .accordion__item i::after {
+    @apply content-[""] absolute w-[4rem] h-[4rem] opacity-[.4rem] ease-in-out duration-[.5s] scale-[0] hover:scale-[1];
+  }
+
+  .accordion__item i.open {
+    @apply rotate-[-180deg];
+  }
+
+  .accordion__item ul {
+    @apply h-auto max-h-0 overflow-hidden lg:overflow-visible ease-in-out duration-[.5s] mb-7;
+  }
+
+  .accordion__item ul.open {
+    @apply max-h-[30rem];
+  }
+}
