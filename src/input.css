@@ -113,31 +113,30 @@
 
   /* accordion */
   .accordion {
-    @apply py-20;
+    @apply py-20 mt-10 border  border-t-gray border-b-transparent border-l-transparent border-r-transparent;
   }
 
   .accordion__wrapper {
-    @apply flex flex-col lg:flex-row justify-between gap-5;
+    @apply flex flex-col lg:flex-row justify-between gap-3;
   }
   .accordion__item h4 {
-    @apply text-2xl mb-4 pr-[1rem] cursor-pointer;
+    @apply font-semibold mb-4 pr-[1rem] cursor-pointer;
   }
 
   .accordion__item ul li {
     @apply mt-7 text-gray;
   }
-
-  /* inline-block para ma set nya yung height and width nung i  */
+  
   .accordion__item i {
-    @apply inline-block lg:hidden ease-in-out duration-[.5s] relative float-right;
+    @apply  lg:hidden ease-in-out duration-[.5s]  float-right;
   }
 
   .accordion__item i::after {
-    @apply content-[""] absolute w-[4rem] h-[4rem] opacity-[.4rem] ease-in-out duration-[.5s] scale-[0] hover:scale-[1];
+    @apply content-['_'] w-[4rem] h-[4rem] opacity-[.4rem] ease-in-out duration-[.5s];
   }
 
-  .accordion__item i.open {
-    @apply rotate-[-180deg];
+  .accordion__item h4 i.open {
+    @apply rotate-[180deg];
   }
 
   .accordion__item ul {
