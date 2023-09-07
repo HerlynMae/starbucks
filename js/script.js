@@ -1,5 +1,3 @@
-
-
 const starNav = document.querySelectorAll(".star__nav__link");
 const starContent = document.querySelectorAll(".coffee__tab__content");
 starNav.forEach((star) => {
@@ -23,7 +21,6 @@ function removeActiveContent() {
     star.classList.remove("active");
   });
 }
-
 
 // for accordion
 const accordions = document.querySelectorAll(".accordion__item h4");
